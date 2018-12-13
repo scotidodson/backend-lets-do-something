@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_000215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "boards", force: :cascade do |t|
-    t.integer "idea_id"
-    t.integer "user_id"
-    t.boolean "archive"
-    t.integer "experience_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.date "date"
     t.boolean "past"
@@ -47,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_000215) do
     t.integer "user_id"
     t.integer "event_id"
     t.integer "rsvp"
+    t.boolean "host"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,6 +80,15 @@ ActiveRecord::Schema.define(version: 2018_12_13_000215) do
     t.integer "event_id"
     t.integer "idea_id"
     t.integer "vote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_ideas", force: :cascade do |t|
+    t.integer "idea_id"
+    t.integer "user_id"
+    t.boolean "archive"
+    t.integer "experience_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

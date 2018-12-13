@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :boards
+      resources :user_ideas
       resources :events
       resources :friendships
       resources :ideas

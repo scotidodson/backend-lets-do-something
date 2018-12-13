@@ -4,6 +4,7 @@ class CreateGuests < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :event_id
       t.integer :rsvp
+      t.boolean :host
 
       t.timestamps
     end

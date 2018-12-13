@@ -1,8 +1,8 @@
-class Api::V1::BoardsController < ApplicationController
+class Api::V1::UserIdeasController < ApplicationController
   before_action :find_board, only: [:update, :destroy]
 
   def index
-    @boards = Board.all
+    @boards = UserIdea.all
     render json: @boards
   end
 
@@ -11,7 +11,7 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.create(board_params)
+    @board = UserIdea.create(board_params)
     render json: @board, status: :accepted
   end
 
@@ -36,6 +36,6 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def find_board
-    @board = Board.find_by(id: params[:id])
+    @board = UserIdea.find_by(id: params[:id])
   end
 end
