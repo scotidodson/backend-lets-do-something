@@ -1,23 +1,26 @@
 class EventSerializer < ActiveModel::Serializer
   attributes :id, :date, :past, :time, :rating, :winner
 
-  # has_many :options
-  has_many :ideas, through: :options
+  has_many :options
+  # has_many :ideas, through: :options
   # has_many :guests
-  has_many :users, through: :guests
+  # has_many :users, through: :guests
   # has_many :votes, through: :guests
 
-  # class OptionSerializer < ActiveModel::Serializer
-  #   attributes :id
-  #   has_one :idea
-  #   has_many :votes
-  # end
-  #
-  #
-  # class IdeaSerializer < ActiveModel::Serializer
-  #   attributes :id, :title
-  #   has_many :options
-  # end
+  class OptionSerializer < ActiveModel::Serializer
+    attributes :id, :event_id, :idea_id
+    has_one :idea
+    belongs_to :event
+    has_many :votes
+
+
+  end
+
+  class IdeaSerializer < ActiveModel::Serializer
+    attributes :id, :title
+    has_many :options
+  end
+
   #
   #
   # class GuestSerializer < ActiveModel::Serializer
