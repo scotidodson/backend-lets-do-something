@@ -7,32 +7,32 @@ class EventSerializer < ActiveModel::Serializer
   has_many :users, through: :guests
   # has_many :votes, through: :guests
 
-  class OptionSerializer < ActiveModel::Serializer
-    attributes :id
-    belongs_to :idea
-    has_many :votes
-  end
-
-
-  class IdeaSerializer < ActiveModel::Serializer
-    attributes :id, :title
-    has_many :options
-  end
-
-
-  class GuestSerializer < ActiveModel::Serializer
-    attributes :id
-    belongs_to :event
-    belongs_to :user
-    has_many :votes
-
-  end
-
-  class VoteSerializer < ActiveModel::Serializer
-    attributes :id
-    belongs_to :option
-    belongs_to :guest
-
-  end
+  # class OptionSerializer < ActiveModel::Serializer
+  #   attributes :id
+  #   has_one :idea
+  #   has_many :votes
+  # end
+  #
+  #
+  # class IdeaSerializer < ActiveModel::Serializer
+  #   attributes :id, :title
+  #   has_many :options
+  # end
+  #
+  #
+  # class GuestSerializer < ActiveModel::Serializer
+  #   attributes :id
+  #   belongs_to :event
+  #   belongs_to :user
+  #   has_many :votes
+  #
+  # end
+  #
+  # class VoteSerializer < ActiveModel::Serializer
+  #   attributes :id
+  #   belongs_to :option
+  #   belongs_to :guest
+  #
+  # end
 
 end
