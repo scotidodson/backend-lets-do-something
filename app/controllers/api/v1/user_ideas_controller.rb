@@ -32,7 +32,7 @@ class Api::V1::UserIdeasController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:user_id, :idea_id, :archive, :experience_count)
+    params.require(:user_idea).permit(:user_id, :idea_id, :archive, :experience_count)
   end
 
   def find_board
