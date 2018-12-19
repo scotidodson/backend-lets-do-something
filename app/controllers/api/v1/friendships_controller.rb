@@ -27,7 +27,7 @@ class Api::V1::FriendshipsController < ApplicationController
   end
 
   def destroy
-    Friendship.destroy_reciprocal_for_ids(params[:user_id], params[:friend_id])
+    @friendship.destroy 
     render json: @friendship, status: :accepted
   end
 
