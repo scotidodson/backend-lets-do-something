@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_044837) do
+ActiveRecord::Schema.define(version: 2018_12_13_000215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_044837) do
     t.integer "event_id"
     t.string "rsvp"
     t.boolean "host"
+    t.boolean "voted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "event_id"], name: "index_guests_on_user_id_and_event_id"
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_044837) do
   create_table "options", force: :cascade do |t|
     t.integer "event_id"
     t.integer "idea_id"
+    t.integer "votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id", "idea_id"], name: "index_options_on_event_id_and_idea_id"
@@ -100,7 +102,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_044837) do
     t.string "last_name"
     t.string "username"
     t.string "password"
-    t.integer "phone"
+    t.string "phone"
     t.string "email"
     t.date "birthday"
     t.string "gender"
@@ -108,14 +110,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_044837) do
     t.string "bio"
     t.boolean "app_member"
     t.string "img_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "votes", force: :cascade do |t|
-    t.integer "option_id"
-    t.integer "guest_id"
-    t.integer "votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

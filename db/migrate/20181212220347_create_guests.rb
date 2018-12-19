@@ -5,6 +5,7 @@ class CreateGuests < ActiveRecord::Migration[5.2]
       t.integer :event_id, foreign_key: true
       t.string :rsvp
       t.boolean :host
+      t.boolean :voted
 
       t.timestamps
     end

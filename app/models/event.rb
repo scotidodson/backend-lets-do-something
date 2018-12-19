@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
   has_many :options
   has_many :ideas, through: :options
   has_many :guests

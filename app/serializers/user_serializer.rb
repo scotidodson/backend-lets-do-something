@@ -4,38 +4,17 @@ class UserSerializer < ActiveModel::Serializer
   has_many :friends, through: :friendships
   has_many :notifications
 
-
-
-  # has_many :events
-  # has_many :guests
   has_many :events, through: :guests
-  # has_many :user_ideas
   has_many :ideas, through: :user_ideas
-
-  # has_many :friendships, dependent: :destroy
-
-  # class UserIdeasSerializer < ActiveModel::Serializer
-  #   attributes :id, :idea_id, :user_id
-  #   belongs_to :user
-  #   belongs_to :idea
-  #
-  # end
+  has_many :user_ideas
 
   class IdeaSerializer < ActiveModel::Serializer
-    attributes :id, :title
+    attributes :id, :title, :street, :city, :state, :zip, :neighborhood, :category, :details, :winter, :spring, :summer, :fall, :price_range, :duration, :website, :expiration, :expiration_date, :private, :submitted_by
 
   end
 
-  # class GuestSerializer < ActiveModel::Serializer
-  #   attributes :id, :user_id, :event_id, :rsvp, :host
-  #   belongs_to :event
-  #
-  #
-  #
-  # end
-
   class EventSerializer < ActiveModel::Serializer
-    attributes :id, :winner
+    attributes :id, :date, :past, :time, :rating, :winner
     has_many :guests
 
   end
