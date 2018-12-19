@@ -1,5 +1,5 @@
 class Idea < ApplicationRecord
-  belongs_to :option
+  has_one :option
   has_many :events, through: :options
 
   has_many :user_ideas
