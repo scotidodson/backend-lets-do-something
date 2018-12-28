@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_000215) do
+ActiveRecord::Schema.define(version: 2018_12_28_221323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_000215) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "seen"
     t.index ["user_id", "event_id"], name: "index_notifications_on_user_id_and_event_id"
   end
 
