@@ -7,7 +7,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :user_ideas
 
   class EventSerializer < ActiveModel::Serializer
-    attributes :id, :date, :past, :time, :rating, :winner, :options, :guests, :ideas, :users
+    attributes :id, :year, :month, :day, :past, :hour, :minute, :am, :rating, :winner, :options, :guests, :ideas, :users
     has_many :guests
   end
 

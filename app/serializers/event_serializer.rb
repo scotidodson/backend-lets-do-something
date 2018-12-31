@@ -1,5 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :date, :past, :time, :rating, :winner
+  attributes :id, :year, :month, :day, :past, :hour, :minute, :am, :rating, :winner
   has_many :options
   has_many :guests
 

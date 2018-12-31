@@ -1,9 +1,13 @@
 class CreateEvents < ActiveRecord::Migration[5.2]
   def change
     create_table :events do |t|
-      t.date :date
+      t.integer :year
+      t.integer :month
+      t.integer :day
+      t.integer :hour
+      t.integer :minute
+      t.boolean :am
       t.boolean :past
-      t.time :time
       t.integer :rating
       t.integer :winner
 
