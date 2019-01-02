@@ -32,7 +32,7 @@ class Api::V1::GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:user_id, :event_id)
+    params.require(:guest).permit(:user_id, :event_id, :host, :voted, :rsvp)
   end
 
   def find_guest
