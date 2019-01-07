@@ -29,10 +29,10 @@ class Api::V1::NotificationsController < ApplicationController
     render json: @notification, status: :accepted
   end
 
-  private            
+  private
 
   def notification_params
-    params.require(:notification).permit(:user_id, :event_id, :message, :seen)
+    params.require(:notification).permit(:user_id, :event_id, :message, :seen, :stage)
   end
 
   def find_notification

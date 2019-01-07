@@ -32,7 +32,7 @@ class Api::V1::OptionsController < ApplicationController
   private
 
   def option_params
-    params.require(:option).permit(:idea_id, :event_id, :guest_id)
+    params.require(:option).permit(:idea_id, :event_id, :guest_id, :votes)
   end
 
   def find_option
